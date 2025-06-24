@@ -1,6 +1,6 @@
 # **Grafana Operator: Automate Monitoring** 🚀
 
-If you're using **Grafana** for monitoring and **K8s** for managing infrastructure, **Grafana Operator** will make Grafana management much easier 👇
+If you're using **Grafana** for monitoring and **K8s** for managing infrastructure, **Grafana Operator** will make Grafana management much easier
 
 
 ## 🔍 What is Grafana Operator?
@@ -10,7 +10,7 @@ It’s a Kubernetes extension (CRD) that lets you manage Grafana instances decla
 You can define everything in YAML and manage it in git 🙌
 
 
-## What can you control?
+## 🛠️ What can you control?
 
 - 📊 **Dashboards** – create and update dashboards via code
 - 🛢️ **Datasources** – define data sources
@@ -26,7 +26,7 @@ This repo provides a fully working local setup for deploying Grafana using the *
 - ⚙️ Example **Custom Resources**:
   - **Grafana** instance
   - **GrafanaDashboard** `todo`
-  - **GrafanaDatasource** `todo
+  - **GrafanaDatasource** `todo`
 - 🗂 GitOps folder structure ready for syncing with ArgoCD
 - 🔁 Scripts to start and clean up the environment
 

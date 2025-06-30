@@ -40,12 +40,12 @@ This repo provides a fully working local setup for deploying Grafana using the *
 
 ```
 minikube delete && minikube start
-kubectl create namespace argocd
 ```
 
 ## ArgoCD Setup
 
 ```
+kubectl create namespace argocd
 helm repo add argo https://argoproj.github.io/argo-helm
 helm repo update
 helm install argocd argo/argo-cd --namespace argocd
@@ -63,6 +63,7 @@ helm install grafana-operator grafana/grafana-operator \
   --namespace grafana-operator \
   --set rbac.create=true
 kubectl apply -f grafana.yaml
+kubectl apply -f datasource.yaml
 kubectl port-forward svc/grafana-service -n grafana-operator 3000:3000
 ```
 

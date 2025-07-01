@@ -25,8 +25,8 @@ This repo provides a fully working local setup for deploying Grafana using the *
 
 - ⚙️ Example **Custom Resources**:
   - **Grafana** instance
-  - **GrafanaDashboard** `todo`
-  - **GrafanaDatasource** `todo`
+  - **GrafanaDashboard**
+  - **GrafanaDatasource**
 - 🗂 GitOps folder structure ready for syncing with ArgoCD
 - 🔁 Scripts to start and clean up the environment
 

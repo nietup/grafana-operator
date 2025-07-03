@@ -15,11 +15,12 @@ You can define everything in YAML and manage it in git 🙌
 - 📊 **Dashboards** – create and update dashboards via code
 - 🛢️ **Datasources** – define data sources
 - 🔔 **Alerts** – manage alerts
+- 🔌 **Plugins**, and more!
 
 
 ## 📂 What's in this Repository?
 
-This repo provides a fully working local setup for deploying Grafana using the **Grafana Operator** in a **Minikube cluster**, with GitOps-ready configuration via **ArgoCD**
+This repo provides a fully working local setup for deploying Grafana using the **Grafana Operator** in a **Minikube cluster**
 
 ### It includes:
 
@@ -27,7 +28,6 @@ This repo provides a fully working local setup for deploying Grafana using the *
   - **Grafana** instance
   - **GrafanaDashboard**
   - **GrafanaDatasource**
-- 🗂 GitOps folder structure ready for syncing with ArgoCD
 - 🔁 Scripts to start and clean up the environment
 
 
@@ -40,17 +40,6 @@ This repo provides a fully working local setup for deploying Grafana using the *
 
 ```
 minikube delete && minikube start
-```
-
-## ArgoCD Setup
-
-```
-kubectl create namespace argocd
-helm repo add argo https://argoproj.github.io/argo-helm
-helm repo update
-helm install argocd argo/argo-cd --namespace argocd
-kubectl port-forward svc/argocd-server -n argocd 8080:443
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
 ## Grafana Operator Setup

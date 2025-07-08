@@ -81,6 +81,13 @@ This repo provides a fully working local setup for deploying Grafana using the *
 
 # Step-by-step Setup
 
+## Requirements
+
+- Docker
+- kubectl
+- helm
+- minikube
+
 ## Start Cluster
 
 ```

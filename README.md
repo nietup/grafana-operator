@@ -20,6 +20,8 @@ You can define everything in YAML and manage it in git 🙌
 
 ## 🧩 Example YAMLs
 
+Easily spin up Grafana with clear YAML definitions, check out some examples below:
+
 <details>
 <summary>🧱 Grafana Instance</summary>
 
@@ -79,23 +81,30 @@ This repo provides a fully working local setup for deploying Grafana using the *
 
 # Step-by-step Setup
 
-## Cluster Clearup and Setup
+## Start Cluster
 
 ```
-minikube delete && minikube start
+minikube start
 ```
 
 ## Grafana Operator Setup
 
 ```
+# create namespace
 kubectl create namespace grafana-operator
+
+# install the operator
 helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 helm install grafana-operator grafana/grafana-operator \
   --namespace grafana-operator \
   --set rbac.create=true
+
+# apply definitions  
 kubectl apply -f grafana.yaml
 kubectl apply -f datasource.yaml
+
+# turn on port forwarding so you can check out your instance!
 kubectl port-forward svc/grafana-service -n grafana-operator 3000:3000
 ```
 
@@ -103,7 +112,7 @@ kubectl port-forward svc/grafana-service -n grafana-operator 3000:3000
 
 ```
 minikube delete
-helm repo remove argo grafana
+helm repo remove grafana
 helm repo update
 ```
 

@@ -19,4 +19,4 @@ helm install grafana-operator grafana/grafana-operator \
   --set rbac.create=true
 kubectl apply -f grafana.yaml
 kubectl apply -f datasource.yaml
-
+kubectl apply -f dashboard.yaml

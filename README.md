@@ -18,6 +18,49 @@ You can define everything in YAML and manage it in git 🙌
 - 🔌 **Plugins**, and more!
 
 
+## 🧩 Example YAMLs
+
+<details>
+<summary>🧱 Grafana Instance</summary>
+
+```yaml
+apiVersion: grafana.integreatly.org/v1beta1
+kind: Grafana
+metadata:
+  name: grafana
+  namespace: grafana-operator
+  labels:
+    dashboards: "grafana"
+spec:
+  config:
+    security:
+      admin_user: ...
+      admin_password: ...
+```
+
+</details> 
+<details> 
+<summary>🔌 Datasource</summary>
+
+```yaml
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDatasource
+metadata:
+  name: test-datasource
+  namespace: grafana-operator
+spec:
+  instanceSelector:
+    matchLabels:
+      dashboards: "grafana"
+  datasource:
+    name: TestData DB
+    type: testdata
+    access: proxy
+    isDefault: false
+    editable: true
+```
+</details>
+
 ## 📂 What's in this Repository?
 
 This repo provides a fully working local setup for deploying Grafana using the **Grafana Operator** in a **Minikube cluster**

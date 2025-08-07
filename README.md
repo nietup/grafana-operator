@@ -67,6 +67,8 @@ spec:
 
 This repo provides a fully working local setup for deploying Grafana using the **Grafana Operator** in a **Minikube cluster**
 
+The [video here](https://youtu.be/8QaTgDvohmo) demonstrates starting this repo 🎬
+
 ### It includes:
 
 - ⚙️ Example **Custom Resources**:
